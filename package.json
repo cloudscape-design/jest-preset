@@ -1,0 +1,37 @@
+{
+  "name": "@cloudscape-design/jest-preset",
+  "version": "2.0.0",
+  "main": "./jest-preset.js",
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "build": "echo 'Nothing to build'",
+    "lint": "eslint .",
+    "test": "tap",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "jest": ">=24",
+    "babel-jest": ">=24"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-header": "3.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-unicorn": "^11.0.2",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "tap": "^16.0.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}

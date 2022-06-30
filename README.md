@@ -1,17 +1,70 @@
-## My Project
+## Jest presets for Cloudscape Design System
 
-TODO: Fill this README out!
+This package contains [Jest presets](https://jestjs.io/docs/en/configuration#preset-string) used to test an application based on the [Cloudscape Design System](https://cloudscape.design/) React components.
 
-Be sure to:
+Cloudscape is an open source design system for building intuitive, engaging, and consistent web cloud experiences at scale. It consists of an extensive set of guidelines to create user experiences, along with the design resources and front-end components to streamline implementation.
 
-* Change the title in this README
-* Edit your repository description on GitHub
+Cloudscape was built for and is used by Amazon Web Services (AWS) products and services. We created it in 2016 to improve the consistency of the user experience across web applications owned by AWS services, while enabling teams to implement those applications faster. Since then, we have continued enhancing the system based on customer feedback and research.
 
-## Security
+You can find [documentation about testing](https://cloudscape.design/get-started/testing/frameworks/) in the Cloudscape documentation website.
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+Browse the [components repository](https://github.com/cloudscape-design/components) of Cloudscape Design System.
+
+
+### Getting started
+
+Install this package with the npm package manager of your choice, for example `npm install --save-dev @cloudscape-design/jest-preset`.
+
+Make sure that you also have `babel-jest` installed.
+
+And `package.json` along with its peer dependency babel-jest of the same version as the jest you are using:
+
+```
+"devDependencies": {
+    "@cloudscape-design/jest-preset": "^2.0.0",
+    "babel-jest": "{your jest version}"
+}
+```
+
+In your `jest.config.json`:
+
+```
+{
+  "preset": "@cloudscape-design/jest-preset"
+}
+```
+
+### Advanced usage
+
+If you are already have another preset in your configuration, you can [merge them together](https://stackoverflow.com/questions/51002460/is-it-possible-to-use-jest-with-multiple-presets-at-the-same-time):
+
+```js
+const merge = require('merge');
+const tsPreset = require('ts-jest/jest-preset');
+const cloudscapePreset = require('@cloudscape-design/jest-preset');
+
+module.exports = merge.recursive(tsPreset, cloudscapePreset, {
+  // ... your config
+});
+```
+
+Note that if multiple presets provide `transformIgnorePatterns` property, you need to merge it manually. By default,
+merge operation extends the ignore paths, you need to make sure that `@cloudscape-design/components` module remains
+unignored.
+
+### Troubleshooting
+
+#### I added preset, but still seeing "Jest encountered an unexpected token" issue
+
+It means that Jest preset could not apply the configuration properly.
+
+1. Check that you do not have `transformIgnorePatterns` in your custom configuration. If you do, it needs to **not ignore** the `@cloudscape-design/*` path.
+2. Check if you are overwriting `transform` property. It should merge the new paths in, not replace. Check the "Advanced usage" section above for an example.
+
+## Contributing
+
+The [contribution guidelines](/CONTRIBUTING.md) contains information on how to contribute, as well as our support model and versioning strategy.
 
 ## License
 
-This project is licensed under the Apache-2.0 License.
-
+This project is licensed under the [Apache 2.0 License](/LICENSE).
