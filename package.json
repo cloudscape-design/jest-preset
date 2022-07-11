@@ -1,6 +1,11 @@
 {
   "name": "@cloudscape-design/jest-preset",
   "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudscape-design/jest-preset.git"
+  },
+  "homepage": "https://cloudscape.design",
   "main": "./jest-preset.js",
   "files": [
     "*.js"
