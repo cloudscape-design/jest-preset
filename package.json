@@ -38,5 +38,13 @@
     "*.js": [
       "eslint --fix"
     ]
+  },
+  "tap": {
+    "coverage-report": [
+      "lcov",
+      "text",
+      "json"
+    ],
+    "no-browser": "true"
   }
 }
