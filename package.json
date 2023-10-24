@@ -44,7 +44,6 @@
       "lcov",
       "text",
       "json"
-    ],
-    "no-browser": "true"
+    ]
   }
 }
