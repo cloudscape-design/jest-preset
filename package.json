@@ -13,7 +13,7 @@
   "scripts": {
     "build": "echo 'Nothing to build'",
     "lint": "eslint .",
-    "test": "tap",
+    "test": "NODE_V8_COVERAGE=coverage node --test",
     "prepare": "husky install"
   },
   "peerDependencies": {
@@ -31,20 +31,11 @@
     "eslint-plugin-unicorn": "^11.0.2",
     "husky": "^7.0.0",
     "lint-staged": "^11.1.1",
-    "prettier": "^2.3.2",
-    "tap": "^16.3.3"
+    "prettier": "^2.3.2"
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix"
     ]
-  },
-  "tap": {
-    "coverage-report": [
-      "lcov",
-      "text",
-      "json"
-    ],
-    "no-browser": "true"
   }
 }
