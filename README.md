@@ -61,7 +61,7 @@ merge operation extends the ignore paths, you need to make sure that the modules
 
 It means that Jest preset could not apply the configuration properly.
 
-1. Check that you do not have `transformIgnorePatterns` in your custom configuration. If you do, it needs to **not ignore** the module paths defined in [jest-preset.js](./jest-preset.js).
+1. Check if you have `transformIgnorePatterns` defined in your custom configuration. If so, it requires a manual merge with configuration defined in [jest-preset.js](./jest-preset.js).
 2. Check if you are overwriting `transform` property. It should merge the new paths in, not replace. Check the "Advanced usage" section above for an example.
 
 ## Contributing
