@@ -15,4 +15,4 @@ permissions:
 
 jobs:
   build:
-    uses: cloudscape-design/actions/.github/workflows/build-lint-test.yml@main
+    uses: cloudscape-design/actions/.github/workflows/build-lint-test.yml@libs/jest-preset-dry-run
