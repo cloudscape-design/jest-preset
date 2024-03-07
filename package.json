@@ -11,7 +11,9 @@
     "*.js"
   ],
   "scripts": {
+    "prebuild": "rm -rf lib && mkdir lib",
     "build": "echo 'Nothing to build'",
+    "postbuild": "cp *.js README.md LICENSE package.json lib",
     "lint": "eslint .",
     "test": "tap",
     "prepare": "husky install"
