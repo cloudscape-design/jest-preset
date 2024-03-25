@@ -40,14 +40,14 @@ In your `jest.config.json`:
 
 ### Advanced usage
 
-If you are already have another preset in your configuration, you can [merge them together](https://stackoverflow.com/questions/51002460/is-it-possible-to-use-jest-with-multiple-presets-at-the-same-time):
+If you already have another preset in your configuration, you can use `@cloudscape-design/jest-preset/merge` helper to merge them together:
 
 ```js
-const merge = require('merge');
+const mergePresets = require('@cloudscape-design/jest-preset/merge');
 const tsPreset = require('ts-jest/jest-preset');
 const cloudscapePreset = require('@cloudscape-design/jest-preset');
 
-module.exports = merge.recursive(tsPreset, cloudscapePreset, {
+module.exports = mergePresets(tsPreset, cloudscapePreset, {
   // ... your config
 });
 ```

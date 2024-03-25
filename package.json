@@ -23,7 +23,8 @@
     "jest": ">=24"
   },
   "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.9.0"
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
