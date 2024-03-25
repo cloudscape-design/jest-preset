@@ -7,4 +7,7 @@ const babelJest = babelJestModule.__esModule ? babelJestModule.default : babelJe
 
 module.exports = babelJest.createTransformer({
   plugins: [require.resolve('@babel/plugin-transform-modules-commonjs')],
+  // do not load own project configuration files
+  babelrc: false,
+  configFile: false,
 });
