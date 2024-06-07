@@ -35,7 +35,7 @@
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "tap": "^18.5.2"
+    "tap": "^19.2.2"
   },
   "lint-staged": {
     "*.js": [
