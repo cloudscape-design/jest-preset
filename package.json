@@ -15,7 +15,8 @@
     "build": "echo 'Nothing to build'",
     "postbuild": "cp *.js README.md LICENSE NOTICE package.json lib",
     "lint": "eslint .",
-    "test": "node --test",
+    "pretest": "node -e \"require('fs').mkdirSync('coverage', { recursive: true })\"",
+    "test": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info",
     "prepare": "husky install"
   },
   "peerDependencies": {
