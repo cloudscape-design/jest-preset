@@ -1,10 +1,9 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-const tap = require('tap');
-const { strict: assert } = require('assert');
+const { test } = require('node:test');
 const merge = require('../merge');
 
-tap.test('merging simple configurations', t => {
+test('merging simple configurations', ({ assert }) => {
   assert.deepEqual(
     merge(
       {
@@ -28,10 +27,9 @@ tap.test('merging simple configurations', t => {
       transformIgnorePatterns: ['project-ignore', 'our-ignore'],
     },
   );
-  t.end();
 });
 
-tap.test('merging multiple configurations', t => {
+test('merging multiple configurations', ({ assert }) => {
   assert.deepEqual(
     merge(
       {
@@ -53,10 +51,9 @@ tap.test('merging multiple configurations', t => {
       },
     },
   );
-  t.end();
 });
 
-tap.test('does not mutate objects', t => {
+test('does not mutate objects', ({ assert }) => {
   const src = {
     transform: { 'project-js': 'project-babel-jest' },
   };
@@ -75,5 +72,4 @@ tap.test('does not mutate objects', t => {
   assert.deepEqual(dest, {
     transform: { 'cloudscape-js': 'our-babel-jest' },
   });
-  t.end();
 });
