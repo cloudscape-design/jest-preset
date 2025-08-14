@@ -15,7 +15,8 @@
     "build": "echo 'Nothing to build'",
     "postbuild": "cp *.js README.md LICENSE NOTICE package.json lib",
     "lint": "eslint .",
-    "test": "tap",
+    "pretest": "node -e \"require('fs').mkdirSync('coverage', { recursive: true })\"",
+    "test": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info",
     "prepare": "husky install"
   },
   "peerDependencies": {
@@ -34,8 +35,7 @@
     "eslint-plugin-unicorn": "^50.0.1",
     "husky": "^9.0.10",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.2.5",
-    "tap": "^19.2.2"
+    "prettier": "^3.2.5"
   },
   "lint-staged": {
     "*.js": [
