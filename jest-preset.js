@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-const esModules = ['d3-.*', 'internmap'].join('|');
+const esModules = ['d3-.*', 'internmap', '@material/material-color-utilities'].join('|');
 
 module.exports = {
   transform: {
