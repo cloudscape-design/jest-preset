@@ -6,14 +6,14 @@
   "env": {
     "node": true
   },
-  "plugins": ["unicorn", "header"],
+  "plugins": ["unicorn", "@tony.ganchev/header"],
   "rules": {
     "unicorn/filename-case": "error",
     "curly": "error",
     "eqeqeq": "error",
     "no-return-await": "error",
     "require-await": "error",
-    "header/header": [
+    "@tony.ganchev/header/header": [
       "error",
       "line",
       [" Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.", " SPDX-License-Identifier: Apache-2.0"]
